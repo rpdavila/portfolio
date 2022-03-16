@@ -1,13 +1,17 @@
 body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)), url('./assets/computer.jpg');
+    background-size: cover;
+    height: 100vh;
     font-family: 'Open Sans Condensed';
     padding: 20px 60px;
-    height: 100vh;
 }  
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
+    text-shadow: 2px 2px 3px black;
 }
 
 p {
@@ -16,7 +20,9 @@ p {
     
 * {
     box-sizing: border-box;
-} 
+    color: white;
+}
+
     
 
 

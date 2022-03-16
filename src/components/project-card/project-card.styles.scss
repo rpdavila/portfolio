@@ -1,6 +1,6 @@
 .project-card {
     margin-top: 20PX;
-    height: 50vh;
+    height: fit-content;
     width: 25vw;
     display: flex;
     padding: 20px;
@@ -8,5 +8,17 @@
     justify-content: space-between;
     align-items: flex-start;
     background-color: lightblue;
-    border-radius: 20px;    
+    border-radius: 20px;  
+    
+    .title {
+        align-self: center;
+        text-decoration: underline;
+    }
+    .custom-button {
+        align-self: center;
+    }
+
+    &:hover {
+        box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }
