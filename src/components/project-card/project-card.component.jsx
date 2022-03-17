@@ -14,11 +14,13 @@ const ProjectCard = ({items}) => {
             <h3 className="title">{title}</h3>
             <span><b>Description: </b>{description}</span><br />
             <span><b>Progress: </b>{progress}</span><br />
-            {userName? (<span><b>Email: </b> {userName}</span>) : null}<br/>
-            {password? (<span><b>Password: </b> {password}</span>) : null}<br/>
-            {url? (<CustomButton onClick={() => handleClick(url)}>Link to site</CustomButton>)
-            : null}           
-            <CustomButton onClick={() => handleClick(github)}>Link to Github</CustomButton>
+            <div className="project-links">
+                {userName? (<span><b>Email: </b> {userName}</span>) : null}
+                {password? (<span><b>Password: </b> {password}</span>) : null}<br/>
+                {url? (<CustomButton onClick={() => handleClick(url)}>Link to site</CustomButton>)
+                : null}<br/>           
+                <CustomButton onClick={() => handleClick(github)}>Link to Github</CustomButton>
+            </div>            
         </div>
     )
 };

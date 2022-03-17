@@ -13,8 +13,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: none;
 
     &:hover {
         background: rgb(99, 155,238);
     }
+}
+
+.wire-frame {
+    @extend custom-button !optional;
+    color: white;
+    border: 1px solid white;
+    background: none;
+    border-radius: 0px;
+    text-shadow: 2px 2px 2px black;
+
 }
