@@ -5,8 +5,13 @@
     width: 50vw;
     height: auto;
 
+    .title {
+        text-shadow: .5px .5px 3px black;
+    }
+
     .paragraph {
         padding: 20px;
         text-align: left;
+        text-shadow: .5px .5px 3px black;
     }
 }

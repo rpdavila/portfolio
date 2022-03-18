@@ -3,7 +3,7 @@ body {
     rgba(0, 0, 0, 0.3)), url('./assets/computer.jpg');
     background-size: cover;
     height: 100vh;
-    font-family: 'Open Sans Condensed';
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px 60px;
 }  
 
@@ -11,7 +11,7 @@ a {
     text-decoration: none;
     color: white;
     font-size: 20px;
-    text-shadow: 2px 2px 3px black;
+    text-shadow: 1px 1px 0px black;    
 }
 
 p {
@@ -21,7 +21,6 @@ p {
 * {
     box-sizing: border-box;
     color: white;
-    text-shadow: 2px 2px 3px black;
 }
 
     
