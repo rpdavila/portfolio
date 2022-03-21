@@ -28,7 +28,27 @@ const PROJECT_DATA = {
         password: null,
         url: null,
         github: 'https://github.com/zero-to-mastery/ascii-art'
-    }    
+    },
+    TwitterAPI: {
+        id:4,
+        title: 'Twitter API',
+        description: 'Choose a geographical location from the pull down menu and get the latest trending data from twitter',
+        progress: 'Complete',
+        userName: null,
+        password: null,
+        url: null,
+        github: 'https://github.com/rpdavila/twitter_analytics/blob/master/twitter_api.py'
+    },
+    OrlandoWeb: {
+        id:4,
+        title: 'Client Music Portfolio',
+        description: 'A music portfolio and lesson website created with a React front end and AWS Amplify serverless backend.',
+        progress: 'Complete',
+        userName: null,
+        password: null,
+        url: 'https://drorlandoruiztrumpet.com',
+        github: 'https://github.com/rpdavila/OR_webapp'
+    }  
 }
 
 export default PROJECT_DATA;

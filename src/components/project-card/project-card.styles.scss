@@ -1,18 +1,15 @@
 .project-card {
-    position: relative;
-    margin-top: 20PX;
+    margin: 30px;
     height: fit-content;
     width: 25vw;
     display: flex;
     padding: 20px;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
     border: 1px solid white;
     border-radius: 20px;
     transition: 500ms ease-in;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    z-index: 1;
 
     .title {
         align-self: center;

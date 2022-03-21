@@ -1,6 +1,7 @@
 .project-page {
+    overflow: hidden;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
     flex-flow: row wrap;
+    justify-content: flex-start; 
 }
