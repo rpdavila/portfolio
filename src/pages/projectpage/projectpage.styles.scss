@@ -1,6 +1,8 @@
 .project-page {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center; 
-    gap: 50px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-flow: dense;
+    gap:12px;
 }
+
