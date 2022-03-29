@@ -35,8 +35,17 @@ const PROJECT_DATA = {
         url: null,
         github: 'https://github.com/rpdavila/twitter_analytics/blob/master/twitter_api.py'
     },
-    OrlandoWeb: {
+    WebScraper: {
         id:4,
+        title: 'Web Scraper',
+        description: 'This program scrapes a specific job postings website for information such as Job Title, Deescription, and application link. It organizes the data into an excel sheet with a clickable link using pandas dataframes and beautiful soup.',
+        userName: null,
+        password: null,
+        url: null,
+        github: 'https://github.com/rpdavila/Job-posting-web-scraper'
+    },
+    OrlandoWeb: {
+        id:5,
         title: 'Client Music Portfolio',
         description: 'A music portfolio and lesson website created with a React front end and AWS Amplify serverless backend.',
         userName: null,
