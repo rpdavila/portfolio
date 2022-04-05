@@ -27,9 +27,7 @@
 
         &:focus ~ .form-input-label {
             @include shrinkLabel();
-        }
-        
-        
+        }           
     }
 
     .form-textarea {
