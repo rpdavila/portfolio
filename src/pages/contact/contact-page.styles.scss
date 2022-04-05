@@ -1,0 +1,11 @@
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
