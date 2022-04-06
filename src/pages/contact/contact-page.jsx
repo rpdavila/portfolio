@@ -8,11 +8,12 @@ const ContactPage = () => {
     const [contactDetails, setContactDetails] = useState({
         name:"",
         email:"",
+        telephone: "",
         message: ""
     });
 
-    const { name, email, message } = contactDetails
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`)
+    const { name, email, telephone, message } = contactDetails
+    console.log(`Name: ${name}, Email: ${email}, Telephone: ${telephone} Message: ${message}`)
 
     const handleChange = (e) => {
         const {value, name} = e.target
@@ -45,6 +46,16 @@ const ContactPage = () => {
                     value={email}
                     handleChange={handleChange}
                     label='E-Mail'
+                    required
+                />
+
+                <FormInput
+                    input='input'
+                    name='telephone'
+                    type='tel'
+                    value={telephone}
+                    handleChange={handleChange}
+                    label='Telephone Number'
                     required
                 />
 

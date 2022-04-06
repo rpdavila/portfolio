@@ -4,8 +4,14 @@
     flex-direction: column;
 
     form {
+        width: fit-content;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-self: center;
+
+        
+        .custom-button {
+            width: 35vw;
+        }
     }
 }
