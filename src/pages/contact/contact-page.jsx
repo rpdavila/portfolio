@@ -28,7 +28,7 @@ const ContactPage = () => {
     
     return (
         <div className="contact">
-            <form onSubmit={handleSubmit}>
+            <form className="form-input" onSubmit={handleSubmit}>
                 <FormInput
                     input='input'
                     name='name'
