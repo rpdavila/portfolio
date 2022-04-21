@@ -4,9 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage";
 import ProjectPage from "./pages/projectpage/projectpage";
-import ContactPage from "./pages/contact/contact-page";
 import './App.css';
-
+import ContactPage from "./pages/contact/contact-page";
 
 function App() {
   return (

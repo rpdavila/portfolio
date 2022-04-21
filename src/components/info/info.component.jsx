@@ -7,7 +7,7 @@ const Info = () => (
         <h1 className="title">Hello and welcome to my developer page.</h1>
         <p className="paragraph">
             My name is Rafael Pietri-Davila a full stack developer, AWS solutions architect and IoT developer.
-            I have a background in music as a performer and a teacher.
+            I have a backround in music as a performer and a teacher.
             Please feel free to contact me. 
         </p>
     </div>
