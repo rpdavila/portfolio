@@ -10,6 +10,10 @@
     transition: 500ms ease-in;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 
+    span {
+        margin-bottom: 10px;
+    }
+
     .title {
         align-self: center;
         text-decoration: underline;
@@ -25,6 +29,7 @@
         display: flex;
         flex-flow: column;
         justify-content: center;
+        gap: 10px;
     }
 
     &:hover {
