@@ -5,6 +5,7 @@ import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage";
 import ProjectPage from "./pages/projectpage/projectpage";
 import ContactPage from "./pages/contact/contact-page";
+import BlogPage from "./pages/blog/blog-page";
 import './App.css';
 
 
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/projects" element={<ProjectPage/>}/>
-        <Route path="/contact" element={<ContactPage/> } />
+        <Route path="/contact" element={<ContactPage/>} />
+        <Route path="/blog" element={<BlogPage/>} />
       </Routes>
     </div>
   );

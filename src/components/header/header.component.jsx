@@ -10,6 +10,7 @@ const Header = () => {
             <div className="options">            
                 <Link className="option" to="/">Home</Link>        
                 <Link className="option" to="/projects">Projects</Link>
+                <Link className="option" to="/blog">Blog</Link>
                 <Link className="option" to="/contact">Contact</Link>                         
             </div>
         </div>
