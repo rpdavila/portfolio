@@ -31,9 +31,11 @@ const BlogPage = () => {
 
            {loading? (
                <div>Loading....</div>
-           ):(postData.map((item, index)=>(
+           ):(
+               postData.map((item, index)=>(
                <BlogItems key={index} items={item} />
-           )))}
+               )))
+           }
            {error && <div>{error}</div>}
        </div>
     );
