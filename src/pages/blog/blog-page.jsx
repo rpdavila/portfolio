@@ -9,7 +9,6 @@ const BlogPage = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-
     useEffect(() => {
         const getData = async () => {
             setLoading(true);
@@ -24,8 +23,7 @@ const BlogPage = () => {
         }
         getData()
     },[]);
-
-    console.log(loading)
+    
     return (
        <div className="project-page">
 
