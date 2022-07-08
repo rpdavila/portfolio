@@ -1,4 +1,4 @@
-.contact {
+.user-confirmation {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,10 +12,10 @@
         flex-direction: column;
         align-self: center;
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3));
-
-
+        
         .custom-button {
             width: 35vw;
         }
-    }
+    } 
+        
 }

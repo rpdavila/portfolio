@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import "./contact-page.styles.scss";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
+
+import "./contact-page.styles.scss";
 
 const ContactPage = () => {
     const [contactDetails, setContactDetails] = useState({
@@ -25,10 +26,9 @@ const ContactPage = () => {
 
     };
 
-    
     return (
         <div className="contact">
-            <form className="form-input" onSubmit={handleSubmit}>
+            <form className="form-container" onSubmit={handleSubmit}>
                 <FormInput
                     input='input'
                     name='name'
@@ -68,7 +68,7 @@ const ContactPage = () => {
                     required
                 />
 
-                <CustomButton type='submit'>send</CustomButton>
+                <CustomButton type='submit'>Send</CustomButton>
             </form>
         </div>
     )
