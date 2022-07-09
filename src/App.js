@@ -13,7 +13,7 @@ import SignInPage from "./pages/sign-in-page/sign-in-page";
 import PostBlogItems from "./components/post-blog-items/post-blog-items.component";
 import './App.css';
 
-Amplify.configure(awsmobile)
+Amplify.configure(awsmobile);
 
 function App() {
   return (
