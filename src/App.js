@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Amplify } from "aws-amplify";
-import awsExports from './aws-exports';
+import awsmobile from './aws-exports';
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage";
@@ -14,7 +14,7 @@ import PostBlogItems from "./components/post-blog-items/post-blog-items.componen
 import './App.css';
 
 
-Amplify.configure(awsExports)
+Amplify.configure(awsmobile)
 
 function App() {
   return (
