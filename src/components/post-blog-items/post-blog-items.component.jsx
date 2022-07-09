@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { DataStore } from '@aws-amplify/datastore';
-import { Blog } from '../../models';
 
 import CustomButton from "../custom-button/custom-button.component";
 import FormInput from "../form-input/form-input.component";
@@ -26,16 +24,11 @@ const PostBlogItems = () => {
 
     const handleSubmit = async () => {
         try {
-            await DataStore.save(
-                new Blog({
-                    "title": title,
-                    "date": date,
-                    "body": body
-                })
-            );
-        } catch(e) {
+            
+            
+        } catch(error) {
             console.log(error);
-            setBlogInfo({...blogInfo, error: e });
+            setBlogInfo({...blogInfo, error: error });
         }
     }
 

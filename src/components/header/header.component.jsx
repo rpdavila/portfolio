@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Auth } from "aws-amplify";
 
 import { UserContext } from "../../contexts/user.context";
 
@@ -12,8 +11,7 @@ const Header = () => {
 
     const handleSignOut = async() => {
         try {
-            await Auth.signOut();
-            setCurrentUser();
+            
             
         } catch (error) {
             console.log(error);

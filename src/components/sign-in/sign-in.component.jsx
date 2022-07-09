@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
 
-import { Auth } from "aws-amplify";
-
-import "./sign-in.styles.scss"
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { UserContext } from "../../contexts/user.context"
+import "./sign-in.styles.scss"
+
 
 const userCredentials = {
     username:"",
@@ -26,12 +25,7 @@ const SignIn = () => {
 
     const signIn = async () => {
         try {
-            const user  = await Auth.signIn({
-                username,
-                password,
-            });
-            console.log(user.username);
-            setCurrentUser(user.username);
+            
         } catch (error) {
             alert('error signing up:', error)
         };
@@ -39,20 +33,18 @@ const SignIn = () => {
 
     const signUp = async () => {
         try {
-            const {user} = await Auth.signUp({
-                username,
-                password
-            });
+            
 
-            console.log(user);
+            console.log();
         } catch (error) {
             console.log('error signing up', error);
         }
     }
 
     const confirmSignUp = async () => {
+        let code = ""
         try {
-            await Auth.confirmSignUp(username, code);
+           
         } catch (error) {
             console.log('Error confirming sign up', error);
         }
