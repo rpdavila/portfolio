@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
+import { Auth } from "aws-amplify";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { UserContext } from "../../contexts/user.context"
 import "./sign-in.styles.scss"
-
 
 const userCredentials = {
     username:"",
@@ -25,37 +25,47 @@ const SignIn = () => {
 
     const signIn = async () => {
         try {
-            
+            const user  =  await Auth.signIn(username, password);
+            setCurrentUser(user.username);
         } catch (error) {
-            alert('error signing up:', error)
+            console.log('error signing in:', error);
         };
     };
 
-    const signUp = async () => {
-        try {
-            
+    // use to programmatically signup a user using amazon cognito pools
 
-            console.log();
-        } catch (error) {
-            console.log('error signing up', error);
-        }
-    }
+    // const signUp = async () => {
+    //     try {
+    //         const { user } = await Auth.signUp({
+    //             username,
+    //             password,
+    //         });
+    //         console.log(user);
+    //     } catch (error) {
+    //         console.log('error signing up', error);
+    //     }
+    // }
 
-    const confirmSignUp = async () => {
-        let code = ""
-        try {
-           
-        } catch (error) {
-            console.log('Error confirming sign up', error);
-        }
-    } 
+    // to programmitacllay confirm the signup using Amazon cognito pools
+
+    // const confirmSignUp = async () => {
+    //     let code = ""
+    //     let username = ""
+    //     try {
+    //        await Auth.confirmSignUp(username, code);
+    //        alert("Signup confirmed!");
+    //     } catch (error) {
+    //         console.log('Error confirming sign up', error);
+    //     }
+    // } 
+
     const clearForm = () => {
         setSignInDetails({...signInDetails, username:'', password:''})
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        signUp();
+        signIn();
         setTimeout(2000);
         clearForm();
     };
