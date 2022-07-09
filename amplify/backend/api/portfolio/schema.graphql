@@ -1,6 +1,0 @@
-type Blog @model @auth(rules: [{allow: private}]) {
-  id: ID!
-  title: String!
-  date: String!
-  body: String!
-}

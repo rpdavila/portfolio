@@ -30,18 +30,40 @@ const SignIn = () => {
                 username,
                 password,
             });
+            console.log(user.username);
             setCurrentUser(user.username);
         } catch (error) {
             alert('error signing up:', error)
         };
     };
+
+    const signUp = async () => {
+        try {
+            const {user} = await Auth.signUp({
+                username,
+                password
+            });
+
+            console.log(user);
+        } catch (error) {
+            console.log('error signing up', error);
+        }
+    }
+
+    const confirmSignUp = async () => {
+        try {
+            await Auth.confirmSignUp(username, code);
+        } catch (error) {
+            console.log('Error confirming sign up', error);
+        }
+    } 
     const clearForm = () => {
         setSignInDetails({...signInDetails, username:'', password:''})
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        signIn();
+        signUp();
         setTimeout(2000);
         clearForm();
     };
