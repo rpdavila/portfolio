@@ -20,7 +20,6 @@ const Header = () => {
         }
     }
 
-    console.log(currentUser);
     return (
         <div className="header">
             <div className="options">            
