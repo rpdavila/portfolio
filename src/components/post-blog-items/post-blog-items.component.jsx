@@ -47,7 +47,7 @@ const PostBlogItems = () => {
                     name='title'
                     type='text'
                     value={title}
-                    onCHange={handleChange}
+                    onChange={handleChange}
                     label='Title'
                     required
                 />
