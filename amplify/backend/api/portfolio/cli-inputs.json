@@ -11,7 +11,10 @@
     "conflictResolution": {},
     "additionalAuthTypes": [
       {
-        "mode": "AWS_IAM"
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-07-25T13:57:57.064Z",
+        "keyDescription": "blog"
       }
     ]
   }
