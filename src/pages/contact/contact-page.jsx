@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { API, graphqlOperation } from "aws-amplify";
+import { createContact } from "../../graphql/mutations";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
@@ -14,16 +15,26 @@ const ContactPage = () => {
     });
 
     const { name, email, telephone, message } = contactDetails
-    console.log(`Name: ${name}, Email: ${email}, Telephone: ${telephone} Message: ${message}`)
 
     const handleChange = (e) => {
         const {value, name} = e.target
         setContactDetails({...contactDetails, [name]: value })
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-
+        try {
+            await API.graphql(graphqlOperation(createContact, {
+                input: {
+                    name: name,
+                    email: email,
+                    telephone: telephone,
+                    message: message
+                }
+            }))
+        } catch (error) {
+            console.log("There was an error: ", error);
+        }
     };
 
     return (

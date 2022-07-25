@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "portfolio",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/home/rafael/ReactProjects/portfolio/amplify/backend/api/portfolio/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authportfolio96801689"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

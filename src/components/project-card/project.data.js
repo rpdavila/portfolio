@@ -52,6 +52,13 @@ const PROJECT_DATA = {
         password: null,
         url: 'https://drorlandoruiztrumpet.com',
         github: 'https://github.com/rpdavila/OR_webapp'
+    },
+    ECommerce: {
+        id:6,
+        title: 'E-Commerce Website',
+        description: 'This E commerce website is built using React, Redux, redux-sagas, firestore, stripe payments and express.js backend',
+        url: 'https://e-comm-crwn-clothing.herokuapp.com/',
+        github: 'https://github.com/rpdavila/crwn-clothing'
     }  
 }
 
