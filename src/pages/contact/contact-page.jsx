@@ -11,12 +11,14 @@ const contactInitialState = {
     name:"",
     email:"",
     telephone: "",
-    message: ""
+    message: "",
+    sent: false,
+    error: null
 };
 
 const ContactPage = () => {
     const [contactDetails, setContactDetails] = useState(contactInitialState);
-    const { name, email, telephone, message } = contactDetails
+    const { name, email, telephone, message, sent, error } = contactDetails
 
     const handleChange = (e) => {
         const {value, name} = e.target
@@ -36,17 +38,19 @@ const ContactPage = () => {
                         message: message
                     }               
                 }            
-            });
-
-            setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: ''});
-
+            });           
+            
+            setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: '', sent: true});
+            
         } catch (error) {
-            console.log(error.errors);
+            setContactDetails({...contactDetails, error: error.errors});
         }
     };
 
     return (
         <div className="contact">
+            {sent? (<div className="success">Message Sent</div>): null}
+            {error? (<div className="fail">Failed to deliver</div>): null}
             <form className="form-container" onSubmit={handleSubmit}>
                 <FormInput
                     input='input'
