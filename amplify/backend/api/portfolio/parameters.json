@@ -1,12 +1,5 @@
 {
   "AppSyncApiName": "portfolio",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthCognitoUserPoolId": {
-    "Fn::GetAtt": [
-      "authportfolio96801689",
-      "Outputs.UserPoolId"
-    ]
-  },
-  "AuthModeLastUpdated": "2022-07-10T22:09:26.720Z"
+  "DynamoDBEnableServerSideEncryption": false
 }

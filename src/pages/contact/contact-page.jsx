@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { API, graphqlOperation } from "aws-amplify";
+import { API } from "aws-amplify";
+
 import { createContact } from "../../graphql/mutations";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 import "./contact-page.styles.scss";
 
-const ContactPage = () => {
-    const [contactDetails, setContactDetails] = useState({
-        name:"",
-        email:"",
-        telephone: "",
-        message: ""
-    });
+const contactInitialState = {
+    name:"",
+    email:"",
+    telephone: "",
+    message: ""
+};
 
+const ContactPage = () => {
+    const [contactDetails, setContactDetails] = useState(contactInitialState);
     const { name, email, telephone, message } = contactDetails
 
     const handleChange = (e) => {
@@ -24,16 +26,22 @@ const ContactPage = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try {
-            await API.graphql(graphqlOperation(createContact, {
-                input: {
-                    name: name,
-                    email: email,
-                    telephone: telephone,
-                    message: message
-                }
-            }))
+            API.graphql({
+                query: createContact,
+                variables: {
+                    input: {
+                        name: name,
+                        email: email,
+                        telephone: telephone,
+                        message: message
+                    }               
+                }            
+            });
+
+            setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: ''});
+
         } catch (error) {
-            console.log("There was an error: ", error);
+            console.log(error.errors);
         }
     };
 
