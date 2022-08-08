@@ -43,7 +43,8 @@ const ContactPage = () => {
             setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: '', sent: true});
             
         } catch (error) {
-            setContactDetails({...contactDetails, error: error.errors});
+            console.log(error);
+            setContactDetails({...contactDetails, error: true});
         }
     };
 
