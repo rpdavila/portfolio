@@ -1,33 +1,57 @@
 import React, { useState } from "react";
+import { API } from "aws-amplify";
 
+import { createContact } from "../../graphql/mutations";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
 import "./contact-page.styles.scss";
 
-const ContactPage = () => {
-    const [contactDetails, setContactDetails] = useState({
-        name:"",
-        email:"",
-        telephone: "",
-        message: ""
-    });
+const contactInitialState = {
+    name:"",
+    email:"",
+    telephone: "",
+    message: "",
+    sent: false,
+    error: null
+};
 
-    const { name, email, telephone, message } = contactDetails
-    console.log(`Name: ${name}, Email: ${email}, Telephone: ${telephone} Message: ${message}`)
+const ContactPage = () => {
+    const [contactDetails, setContactDetails] = useState(contactInitialState);
+    const { name, email, telephone, message, sent, error } = contactDetails
 
     const handleChange = (e) => {
         const {value, name} = e.target
         setContactDetails({...contactDetails, [name]: value })
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
-
+        try {
+            API.graphql({
+                query: createContact,
+                variables: {
+                    input: {
+                        name: name,
+                        email: email,
+                        telephone: telephone,
+                        message: message
+                    }               
+                }            
+            });           
+            
+            setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: '', sent: true});
+            
+        } catch (error) {
+            console.log(error);
+            setContactDetails({...contactDetails, error: true});
+        }
     };
 
     return (
         <div className="contact">
+            {sent? (<div className="success">Message Sent</div>): null}
+            {error? (<div className="fail">Failed to deliver</div>): null}
             <form className="form-container" onSubmit={handleSubmit}>
                 <FormInput
                     input='input'

@@ -1,20 +1,30 @@
 {
-  "staging": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-amplifyf699abd9efc34-staging-153116-authRole",
-      "UnauthRoleArn": "arn:aws:iam::360204882659:role/amplify-amplifyf699abd9efc34-staging-153116-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::360204882659:role/amplify-amplifyf699abd9efc34-staging-153116-authRole",
-      "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-amplifyf699abd9efc34-staging-153116-deployment",
-      "UnauthRoleName": "amplify-amplifyf699abd9efc34-staging-153116-unauthRole",
-      "StackName": "amplify-amplifyf699abd9efc34-staging-153116",
-      "StackId": "arn:aws:cloudformation:eu-central-1:360204882659:stack/amplify-amplifyf699abd9efc34-staging-153116/6180aff0-df64-11ec-a839-0292fec468c4",
-      "AmplifyAppId": "d2z427at92m96z"
-    },
-    "categories": {
-      "auth": {
-        "portfolio78d7265c": {}
-      }
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-portfolio-dev-110947-authRole",
+            "UnauthRoleArn": "arn:aws:iam::360204882659:role/amplify-portfolio-dev-110947-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::360204882659:role/amplify-portfolio-dev-110947-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-portfolio-dev-110947-deployment",
+            "UnauthRoleName": "amplify-portfolio-dev-110947-unauthRole",
+            "StackName": "amplify-portfolio-dev-110947",
+            "StackId": "arn:aws:cloudformation:eu-central-1:360204882659:stack/amplify-portfolio-dev-110947/b1b15fa0-1179-11ed-8465-0641a86caf02",
+            "AmplifyAppId": "d1kcgdxbwkwsyb"
+        },
+        "categories": {
+            "function": {
+                "sendEmail": {
+                    "sesEmail": "rpietridavila@gmail.com",
+                    "deploymentBucketName": "amplify-portfolio-dev-110947-deployment",
+                    "s3Key": "amplify-builds/sendEmail-59553774514430663950-build.zip"
+                }
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d1kcgdxbwkwsyb",
+                    "type": "cicd"
+                }
+            }
+        }
     }
-  }
 }

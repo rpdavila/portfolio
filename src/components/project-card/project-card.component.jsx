@@ -5,9 +5,10 @@ import "./project-card.styles.scss";
 
 const ProjectCard = ({items}) => {
     const {title, description, userName, password, url, github} = items
+
     const handleClick = (siteUrl) => {
         window.open(siteUrl);
-    };
+    }
 
     return (
         <div className="project-card">
