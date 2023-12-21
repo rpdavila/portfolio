@@ -13,7 +13,7 @@ const ProjectPage = () => {
         <div className="project-page">
             {data.map((items, index) => (
                 <ProjectCard key={index} items={items} />
-            ))}        
+            )).reverse()}        
         </div>
     )
 };
