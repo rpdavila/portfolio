@@ -43,47 +43,5 @@
       "service": "amplifyhosting",
       "type": "cicd"
     }
-  },
-  "parameters": {
-    "AMPLIFY_function_sendEmail_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendEmail"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendEmail_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendEmail"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendEmail_sesEmail": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendEmail"
-        }
-      ]
-    },
-    "AMPLIFY_hosting_amplifyhosting_appId": {
-      "usedBy": [
-        {
-          "category": "hosting",
-          "resourceName": "amplifyhosting"
-        }
-      ]
-    },
-    "AMPLIFY_hosting_amplifyhosting_type": {
-      "usedBy": [
-        {
-          "category": "hosting",
-          "resourceName": "amplifyhosting"
-        }
-      ]
-    }
   }
 }
