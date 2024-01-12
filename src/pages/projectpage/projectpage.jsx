@@ -8,12 +8,12 @@ const ProjectPage = () => {
     const data = Object.keys(PROJECT_DATA).map(
         key => PROJECT_DATA[key]
     );
-    
+
     return (
         <div className="project-page">
             {data.map((items, index) => (
                 <ProjectCard key={index} items={items} />
-            ))}        
+            )).reverse()}
         </div>
     )
 };

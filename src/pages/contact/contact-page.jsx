@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { API } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
 
 import { createContact } from "../../graphql/mutations";
 import FormInput from "../../components/form-input/form-input.component";
@@ -8,8 +8,8 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import "./contact-page.styles.scss";
 
 const contactInitialState = {
-    name:"",
-    email:"",
+    name: "",
+    email: "",
     telephone: "",
     message: "",
     sent: false,
@@ -19,16 +19,17 @@ const contactInitialState = {
 const ContactPage = () => {
     const [contactDetails, setContactDetails] = useState(contactInitialState);
     const { name, email, telephone, message, sent, error } = contactDetails
+    const client = generateClient();
 
     const handleChange = (e) => {
-        const {value, name} = e.target
-        setContactDetails({...contactDetails, [name]: value })
+        const { value, name } = e.target
+        setContactDetails({ ...contactDetails, [name]: value })
     };
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            API.graphql({
+            await client.graphql({
                 query: createContact,
                 variables: {
                     input: {
@@ -36,22 +37,22 @@ const ContactPage = () => {
                         email: email,
                         telephone: telephone,
                         message: message
-                    }               
-                }            
-            });           
-            
-            setContactDetails({...contactDetails, name: '', email: '', telephone: '', message: '', sent: true});
-            
+                    }
+                }
+            });
+
+            setContactDetails({ ...contactDetails, name: '', email: '', telephone: '', message: '', sent: true });
+
         } catch (error) {
             console.log(error);
-            setContactDetails({...contactDetails, error: true});
+            setContactDetails({ ...contactDetails, error: true });
         }
     };
 
     return (
         <div className="contact">
-            {sent? (<div className="success">Message Sent</div>): null}
-            {error? (<div className="fail">Failed to deliver</div>): null}
+            {sent && <div className="success">Message Sent</div>}
+            {error && <div className="fail">Failed to deliver</div>}
             <form className="form-container" onSubmit={handleSubmit}>
                 <FormInput
                     input='input'

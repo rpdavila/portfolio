@@ -3,8 +3,8 @@ import React from "react";
 import CustomButton from "../custom-button/custom-button.component";
 import "./project-card.styles.scss";
 
-const ProjectCard = ({items}) => {
-    const {title, description, userName, password, url, github} = items
+const ProjectCard = ({ items }) => {
+    const { title, description, userName, password, url, github, inDevelopment } = items
 
     const handleClick = (siteUrl) => {
         window.open(siteUrl);
@@ -15,12 +15,13 @@ const ProjectCard = ({items}) => {
             <h3 className="title">{title}</h3>
             <span>{description}</span>
             <div className="project-links">
-                {userName? (<span><b>Email: </b> {userName}</span>) : null}
-                {password? (<span><b>Password: </b> {password}</span>) : null}
+                {userName ? (<span><b>Email: </b> {userName}</span>) : null}
+                {password ? (<span><b>Password: </b> {password}</span>) : null}
+                {inDevelopment ? (<span>In Development: Yes</span>) : null}
                 <CustomButton onClick={() => handleClick(github)}>Link to Github</CustomButton>
-                {url? (<CustomButton onClick={() => handleClick(url)}>Link to site</CustomButton>)
-                : null}        
-            </div>            
+                {url ? (<CustomButton onClick={() => handleClick(url)}>Link to site</CustomButton>)
+                    : null}
+            </div>
         </div>
     );
 }

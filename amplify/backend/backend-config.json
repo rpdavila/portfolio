@@ -1,47 +1,89 @@
 {
   "api": {
     "portfolio": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "output": {
         "authConfig": {
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 365,
               "apiKeyExpirationDate": "2023-08-01T09:10:58.338Z",
+              "apiKeyExpirationDays": 365,
               "description": "contact"
-            }
-          },
-          "additionalAuthenticationProviders": []
+            },
+            "authenticationType": "API_KEY"
+          }
         }
-      }
-    }
-  },
-  "function": {
-    "sendEmail": {
-      "build": true,
+      },
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "api",
-          "resourceName": "portfolio",
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
-          ]
-        }
-      ]
+      "service": "AppSync"
     }
   },
   "auth": {},
+  "function": {
+    "sendEmail": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "portfolio"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "amplifyhosting": {
+      "lastPushTimeStamp": "2022-08-03T13:58:43.474Z",
       "service": "amplifyhosting",
-      "type": "cicd",
-      "lastPushTimeStamp": "2022-08-03T13:58:43.474Z"
+      "type": "cicd"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_sendEmail_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendEmail_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendEmail"
+        }
+      ]
+    },
+    "AMPLIFY_function_sendEmail_sesEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sendEmail"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
     }
   }
 }
