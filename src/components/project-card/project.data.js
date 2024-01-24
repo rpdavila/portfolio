@@ -55,7 +55,14 @@ const PROJECT_DATA = {
         title: 'E-Commerce Website',
         description: 'This E commerce website is built using React, Redux, redux-sagas, firestore, stripe payments and express.js backend',
         github: 'https://github.com/rpdavila/crwn-clothing'
-    }  
+    },
+    Atlas: {
+        id: 7,
+        title: "Inventory Management system for music teachers",
+        description: null,
+        github: "https://github.com/rpdavila/atlas",
+        inDevelopment: true
+    }
 }
 
 export default PROJECT_DATA;

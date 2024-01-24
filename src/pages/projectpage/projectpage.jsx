@@ -1,5 +1,4 @@
 import React from "react";
-
 import ProjectCard from "../../components/project-card/project-card.component";
 import PROJECT_DATA from "../../components/project-card/project.data";
 import "./projectpage.styles.scss";
