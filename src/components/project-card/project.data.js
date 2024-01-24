@@ -55,15 +55,7 @@ const PROJECT_DATA = {
         title: 'E-Commerce Website',
         description: 'This E commerce website is built using React, Redux, redux-sagas, firestore, stripe payments and express.js backend',
         github: 'https://github.com/rpdavila/crwn-clothing'
-    },
-    MusicInventory: {
-        id: 7,
-        title: 'Music Inventory Management System',
-        description: 'This is a music inventory management system that allows users to add, edit, and delete music items from a database and assign instruments to students.',
-        github: 'https://github.com/rpdavila/atlas',
-        inDevelopment: true
-
-    }
+    }  
 }
 
 export default PROJECT_DATA;

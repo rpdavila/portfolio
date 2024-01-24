@@ -5,11 +5,16 @@
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
               "apiKeyExpirationDate": "2023-08-01T09:10:58.338Z",
               "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDays": 365,
               "description": "contact"
+            },
+            "authenticationType": "API_KEY"
+          }
             },
             "authenticationType": "API_KEY"
           }
@@ -17,8 +22,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
     }
   },
+  "auth": {},
   "auth": {},
   "function": {
     "sendEmail": {
@@ -31,7 +40,13 @@
           ],
           "category": "api",
           "resourceName": "portfolio"
+          ],
+          "category": "api",
+          "resourceName": "portfolio"
         }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -39,6 +54,7 @@
   },
   "hosting": {
     "amplifyhosting": {
+      "lastPushTimeStamp": "2022-08-03T13:58:43.474Z",
       "lastPushTimeStamp": "2022-08-03T13:58:43.474Z",
       "service": "amplifyhosting",
       "type": "cicd"
